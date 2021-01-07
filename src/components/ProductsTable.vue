@@ -1,9 +1,10 @@
 <template>
   <div class="products_table">
     <div>
-      <v-btn class="add_btn" @click="addProduct">Добавить новый продукт</v-btn>
+      <v-btn class="add_btn" id ="addProductBtn" @click="addProduct">Добавить новый продукт</v-btn>
     </div>
     <v-data-table
+        id ="productsTable"
         :headers="headers"
         :items="products"
         item-key="id"
@@ -13,22 +14,22 @@
     >
       <template v-slot:header.nameProduct="{ header }">
         {{ header.text }}
-        <v-text-field v-model="searching.nameProduct"
+        <v-text-field id="nameProductTxt"  v-model="searching.nameProduct"
                       outlined/>
       </template>
       <template v-slot:header.purchasePrice="{ header }">
         {{ header.text }}
-        <v-text-field v-model="searching.purchasePrice"
+        <v-text-field id="purchasePriceTxt" v-model="searching.purchasePrice"
                       outlined/>
       </template>
       <template v-slot:header.number="{ header }">
         {{ header.text }}
-        <v-text-field v-model="searching.number"
+        <v-text-field  v-model="searching.number"
                       outlined/>
       </template>
       <template v-slot:header.markup="{ header }">
         {{ header.text }}
-        <v-text-field v-model="searching.markup"
+        <v-text-field id="markupTxt" v-model="searching.markup"
                       outlined/>
       </template>
       <template v-slot:header.shelfLife="{ header }">

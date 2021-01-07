@@ -11,7 +11,8 @@ export default class Actors {
         return await Actors.http.post('/product/add', obj)
     }
 
+
     static async deleteProduct(id) {
-        return await Actors.http.get('/product/delete/' + id)
+        return await Actors.http.get('/product/delete/' + `?id=${id}`)
     }
 }
